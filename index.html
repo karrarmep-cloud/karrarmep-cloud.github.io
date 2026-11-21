@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>م. محمد كرار | تصميم الأنظمة الكهربائية - MEP - إدارة المشاريع</title>
+  <title>م. محمد كرار | Eng. Mohammed Karrar</title>
   <style>
     :root {
       --primary: #0b192c;
@@ -18,7 +18,28 @@
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Arial, sans-serif; }
     body { background: var(--bg); color: var(--text); line-height: 1.75; }
 
-    /* Header with subtle blueprint grid */
+    /* Top bar for Language Switcher */
+    .topbar {
+      background: #06101d;
+      padding: 0.7rem 1.5rem;
+      display: flex;
+      justify-content: flex-end;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .lang-btn {
+      background: transparent;
+      color: #e2e8f0;
+      border: 1px solid #475569;
+      padding: 0.35rem 0.9rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.88rem;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+    .lang-btn:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+    /* Header */
     header {
       background-color: var(--primary);
       background-image:
@@ -26,7 +47,7 @@
         linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
       background-size: 28px 28px;
       color: #fff;
-      padding: 4.5rem 1.5rem 4rem;
+      padding: 4rem 1.5rem 3.8rem;
       text-align: center;
       border-bottom: 4px solid var(--amber);
     }
@@ -39,20 +60,24 @@
       border-radius: 50px;
       font-size: 0.85rem;
       margin-bottom: 1rem;
-      letter-spacing: 0.5px;
     }
     header h1 { font-size: 2.3rem; margin-bottom: 0.6rem; font-weight: 700; }
-    header p { color: #cbd5e1; font-size: 1.1rem; max-width: 720px; margin: 0 auto 1.8rem; }
-    .actions { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+    header p { color: #cbd5e1; font-size: 1.08rem; max-width: 720px; margin: 0 auto 1.8rem; }
+    .actions { display: flex; justify-content: center; gap: 0.9rem; flex-wrap: wrap; }
     .btn {
-      padding: 0.75rem 1.6rem;
+      padding: 0.75rem 1.5rem;
       border-radius: 6px;
       text-decoration: none;
       font-weight: 600;
       transition: 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
     }
     .btn-primary { background: var(--accent); color: #fff; }
     .btn-primary:hover { background: #0369a1; }
+    .btn-amber { background: var(--amber); color: #0b192c; }
+    .btn-amber:hover { background: #d97706; color: #fff; }
     .btn-outline { border: 1px solid #94a3b8; color: #fff; }
     .btn-outline:hover { background: rgba(255,255,255,0.1); }
 
@@ -69,8 +94,8 @@
       color: var(--primary);
       font-size: 1.45rem;
       margin-bottom: 1.2rem;
-      padding-right: 0.85rem;
-      border-right: 4px solid var(--accent);
+      padding-inline-start: 0.85rem;
+      border-inline-start: 4px solid var(--accent);
     }
 
     .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.2rem; }
@@ -82,7 +107,7 @@
       padding: 1.4rem;
     }
     .card h3 { color: var(--primary); font-size: 1.12rem; margin-bottom: 0.7rem; }
-    .card ul { padding-right: 1.2rem; color: var(--text); font-size: 0.95rem; }
+    .card ul { padding-inline-start: 1.2rem; color: var(--text); font-size: 0.95rem; }
     .card li { margin-bottom: 0.45rem; }
 
     .tags { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.8rem; }
@@ -110,56 +135,77 @@
 </head>
 <body>
 
+  <div class="topbar">
+    <button class="lang-btn" id="langToggle" onclick="toggleLanguage()">English</button>
+  </div>
+
   <header>
     <div class="badge">Electrical Design • MEP Engineering • Project Management</div>
-    <h1>م. محمد كرار</h1>
-    <p>مهندس تصميم أنظمة كهربائية، قيادة ومراجعة مشاريع الكهروميكانيك (MEP)، وإدارة المشاريع وضبط الجودة (PMO / QA-QC)</p>
+    <h1 data-ar="م. محمد كرار" data-en="Eng. Mohammed Karrar">م. محمد كرار</h1>
+    <p data-ar="مهندس تصميم أنظمة كهربائية، قيادة ومراجعة مشاريع الكهروميكانيك (MEP)، وإدارة المشاريع وضبط الجودة (PMO / QA-QC)"
+       data-en="Electrical Systems Design Engineer, MEP Engineering Lead, and Project Management & QA/QC Specialist (PMO)">
+      مهندس تصميم أنظمة كهربائية، قيادة ومراجعة مشاريع الكهروميكانيك (MEP)، وإدارة المشاريع وضبط الجودة (PMO / QA-QC)
+    </p>
     <div class="actions">
-      <a href="#services" class="btn btn-primary">مجالات العمل</a>
-      <a href="#contact" class="btn btn-outline">تواصل معي</a>
+      <a href="CV.pdf" download class="btn btn-amber" data-ar="📄 تحميل السيرة الذاتية (PDF)" data-en="📄 Download CV (PDF)">📄 تحميل السيرة الذاتية (PDF)</a>
+      <a href="#services" class="btn btn-primary" data-ar="مجالات العمل" data-en="Core Expertise">مجالات العمل</a>
+      <a href="#contact" class="btn btn-outline" data-ar="تواصل معي" data-en="Contact Me">تواصل معي</a>
     </div>
   </header>
 
   <div class="container">
 
     <section>
-      <h2>نبذة مهنية</h2>
-      <p>
+      <h2 data-ar="نبذة مهنية" data-en="Professional Profile">نبذة مهنية</h2>
+      <p data-ar="مهندس متخصص في تصميم ومراجعة الأنظمة الكهربائية والكهروميكانيكية (MEP) وإدارة المشاريع الهندسية الكبرى، مع خبرة عملية في تمثيل المالك (Owner's Representative)، تدقيق المخططات التصميمية والتنفيذية، إدارة الوثائق الفنية (Document Control)، وضبط الجودة وتطبيق المعايير التعاقدية في المنشآت الحيوية والصحية."
+         data-en="Experienced engineer specializing in Electrical & MEP Systems Design, Technical Design Reviews, and Major Project Management. Skilled in Owner's Representation, QA/QC enforcement, Document Control, and FIDIC contract administration for complex infrastructure and healthcare facilities.">
         مهندس متخصص في تصميم ومراجعة الأنظمة الكهربائية والكهروميكانيكية (MEP) وإدارة المشاريع الهندسية الكبرى، مع خبرة عملية في تمثيل المالك (Owner's Representative)، تدقيق المخططات التصميمية والتنفيذية، إدارة الوثائق الفنية (Document Control)، وضبط الجودة وتطبيق المعايير التعاقدية في المنشآت الحيوية والصحية.
       </p>
     </section>
 
     <section id="services">
-      <h2>المحاور التخصصية</h2>
+      <h2 data-ar="المحاور التخصصية" data-en="Core Expertise">المحاور التخصصية</h2>
       <div class="grid-3">
 
         <div class="card">
-          <h3>⚡ تصميم الأنظمة الكهربائية</h3>
+          <h3 data-ar="⚡ تصميم الأنظمة الكهربائية" data-en="⚡ Electrical Systems Design">⚡ تصميم الأنظمة الكهربائية</h3>
           <ul>
-            <li>تصميم شبكات الجهد المتوسط والمنخفض (MV/LV) وتقدير الأحمال الكهربائية.</li>
-            <li>حسابات هبوط الجهد، تيارات القصر، وانتقائية القواطع (Discrimination).</li>
-            <li>أنظمة الطاقة الاحتياطية (Generators & UPS) وأنظمة العزل الطبي (Medical IT/IPS).</li>
-            <li>تصميم أنظمة الإنارة، التأريض، الحماية من الصواعق، والتيار الخفيف (ELV/ICT).</li>
+            <li data-ar="تصميم شبكات الجهد المتوسط والمنخفض (MV/LV) وتقدير الأحمال الكهربائية."
+                data-en="MV/LV power distribution design and comprehensive electrical load calculations.">تصميم شبكات الجهد المتوسط والمنخفض (MV/LV) وتقدير الأحمال الكهربائية.</li>
+            <li data-ar="حسابات هبوط الجهد، تيارات القصر، وانتقائية القواطع (Discrimination)."
+                data-en="Voltage drop, short-circuit studies, and protective device discrimination.">حسابات هبوط الجهد، تيارات القصر، وانتقائية القواطع (Discrimination).</li>
+            <li data-ar="أنظمة الطاقة الاحتياطية (Generators & UPS) وأنظمة العزل الطبي (Medical IT/IPS)."
+                data-en="Backup power systems (Generators & UPS) and Medical IT/IPS isolation systems.">أنظمة الطاقة الاحتياطية (Generators & UPS) وأنظمة العزل الطبي (Medical IT/IPS).</li>
+            <li data-ar="تصميم أنظمة الإنارة، التأريض، الحماية من الصواعق، والتيار الخفيف (ELV/ICT)."
+                data-en="Lighting, earthing, lightning protection, and ELV/ICT systems design.">تصميم أنظمة الإنارة، التأريض، الحماية من الصواعق، والتيار الخفيف (ELV/ICT).</li>
           </ul>
         </div>
 
         <div class="card">
-          <h3>⚙️ هندسة الكهروميكانيك (MEP)</h3>
+          <h3 data-ar="⚙️ هندسة الكهروميكانيك (MEP)" data-en="⚙️ MEP Engineering">⚙️ هندسة الكهروميكانيك (MEP)</h3>
           <ul>
-            <li>التنسيق المتكامل بين الأنظمة الكهربائية والميكانيكية والصحية ومنع التعارضات.</li>
-            <li>مراجعة تصاميم التكييف وتدرج الضغوط الهوائية في المنشآت الحرجة والمستشفيات.</li>
-            <li>تكامل أنظمة إنذار وإطفاء الحريق (Fire Alarm Interlocks) مع أنظمة المبنى.</li>
-            <li>تدقيق الاعتمادات الفنية للمواد (Material Submittals) والمخططات التنفيذية (Shop Drawings).</li>
+            <li data-ar="التنسيق المتكامل بين الأنظمة الكهربائية والميكانيكية والصحية ومنع التعارضات."
+                data-en="Full multi-discipline MEP coordination and clash resolution.">التنسيق المتكامل بين الأنظمة الكهربائية والميكانيكية والصحية ومنع التعارضات.</li>
+            <li data-ar="مراجعة تصاميم التكييف وتدرج الضغوط الهوائية في المنشآت الحرجة والمستشفيات."
+                data-en="Reviewing HVAC designs and pressure cascades for critical & healthcare facilities.">مراجعة تصاميم التكييف وتدرج الضغوط الهوائية في المنشآت الحرجة والمستشفيات.</li>
+            <li data-ar="تكامل أنظمة إنذار وإطفاء الحريق (Fire Alarm Interlocks) مع أنظمة المبنى."
+                data-en="Fire alarm and firefighting interlock integration with building systems.">تكامل أنظمة إنذار وإطفاء الحريق (Fire Alarm Interlocks) مع أنظمة المبنى.</li>
+            <li data-ar="تدقيق الاعتمادات الفنية للمواد (Material Submittals) والمخططات التنفيذية."
+                data-en="Auditing Material Submittals, Method Statements, and Shop Drawings.">تدقيق الاعتمادات الفنية للمواد (Material Submittals) والمخططات التنفيذية.</li>
           </ul>
         </div>
 
         <div class="card">
-          <h3>📋 إدارة المشاريع و PMO</h3>
+          <h3 data-ar="📋 إدارة المشاريع و PMO" data-en="📋 Project Management & PMO">📋 إدارة المشاريع و PMO</h3>
           <ul>
-            <li>تمثيل المالك والإشراف الفني على المقاولين والاستشاريين وفق معايير FIDIC.</li>
-            <li>ضبط الجودة (QA/QC)، إصدار ومتابعة تقارير عدم المطابقة (NCR) وخطط التصحيح.</li>
-            <li>إدارة الوثائق الهندسية، الاستفسارات الفنية (RFIs)، ومحاضر الفحص والاستلام (T&C).</li>
-            <li>متابعة الجداول الزمنية، تقييم المخاطر الفنية، وإعداد التقارير التنفيذية للإدارة العليا.</li>
+            <li data-ar="تمثيل المالك والإشراف الفني على المقاولين والاستشاريين وفق معايير FIDIC."
+                data-en="Owner's representation and contractor/consultant oversight under FIDIC standards.">تمثيل المالك والإشراف الفني على المقاولين والاستشاريين وفق معايير FIDIC.</li>
+            <li data-ar="ضبط الجودة (QA/QC)، إصدار ومتابعة تقارير عدم المطابقة (NCR) وخطط التصحيح."
+                data-en="QA/QC enforcement, NCR issuance, and Corrective Action Plan tracking.">ضبط الجودة (QA/QC)، إصدار ومتابعة تقارير عدم المطابقة (NCR) وخطط التصحيح.</li>
+            <li data-ar="إدارة الوثائق الهندسية، الاستفسارات الفنية (RFIs)، ومحاضر الفحص والاستلام (T&C)."
+                data-en="Document control, RFIs management, and Testing & Commissioning (T&C) oversight.">إدارة الوثائق الهندسية، الاستفسارات الفنية (RFIs)، ومحاضر الفحص والاستلام (T&C).</li>
+            <li data-ar="متابعة الجداول الزمنية، تقييم المخاطر الفنية، وإعداد التقارير التنفيذية."
+                data-en="Schedule monitoring, technical risk assessment, and executive reporting.">متابعة الجداول الزمنية، تقييم المخاطر الفنية، وإعداد التقارير التنفيذية.</li>
           </ul>
         </div>
 
@@ -167,7 +213,7 @@
     </section>
 
     <section>
-      <h2>المعايير والأدوات المعتمدة</h2>
+      <h2 data-ar="المعايير والأدوات المعتمدة" data-en="Standards & Tools">المعايير والأدوات المعتمدة</h2>
       <div class="tags">
         <span class="tag">IEC 60364</span>
         <span class="tag">NFPA 70 / 72 / 99</span>
@@ -202,9 +248,9 @@
            data-ar="💬 تواصل عبر واتساب" data-en="💬 Chat on WhatsApp">
           💬 تواصل عبر واتساب
         </a>
-        <a href="https://www.linkedin.com/in/your-profile" target="_blank" class="btn" style="background: #0A66C2; color: #fff;"
+        <a href="https://www.linkedin.com/in/mohammed-karrar-a572b150" target="_blank" class="btn" style="background: #0A66C2; color: #fff;"
            data-ar="🔗 حساب لينكدإن (LinkedIn)" data-en="🔗 LinkedIn Profile">
-            LinkedIn
+          🔗 حساب لينكدإن (LinkedIn)
         </a>
       </div>
     </section>
@@ -212,8 +258,22 @@
   </div>
 
   <footer>
-    © 2026 Eng. Mohammed karrar — Electrical Design, MEP & Project Management
+    © 2026 Eng. Mohammed Karrar — Electrical Design, MEP & Project Management
   </footer>
+
+  <script>
+    let currentLang = 'ar';
+    function toggleLanguage() {
+      currentLang = currentLang === 'ar' ? 'en' : 'ar';
+      document.documentElement.lang = currentLang;
+      document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+      document.getElementById('langToggle').textContent = currentLang === 'ar' ? 'English' : 'العربية';
+
+      document.querySelectorAll('[data-ar]').forEach(el => {
+        el.textContent = el.getAttribute(`data-${currentLang}`);
+      });
+    }
+  </script>
 
 </body>
 </html>
