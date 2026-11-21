@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>م. محمد الفاخري | تصميم الأنظمة الكهربائية - MEP - إدارة المشاريع</title>
+  <style>
+    :root {
+      --primary: #0b192c;
+      --secondary: #1e3a5f;
+      --accent: #0284c7;
+      --amber: #f59e0b;
+      --bg: #f1f5f9;
+      --card: #ffffff;
+      --text: #334155;
+      --muted: #64748b;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Arial, sans-serif; }
+    body { background: var(--bg); color: var(--text); line-height: 1.75; }
+
+    /* Header with subtle blueprint grid */
+    header {
+      background-color: var(--primary);
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 28px 28px;
+      color: #fff;
+      padding: 4.5rem 1.5rem 4rem;
+      text-align: center;
+      border-bottom: 4px solid var(--amber);
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(2, 132, 199, 0.2);
+      border: 1px solid var(--accent);
+      color: #7dd3fc;
+      padding: 0.3rem 1rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+      letter-spacing: 0.5px;
+    }
+    header h1 { font-size: 2.3rem; margin-bottom: 0.6rem; font-weight: 700; }
+    header p { color: #cbd5e1; font-size: 1.1rem; max-width: 720px; margin: 0 auto 1.8rem; }
+    .actions { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+    .btn {
+      padding: 0.75rem 1.6rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { background: #0369a1; }
+    .btn-outline { border: 1px solid #94a3b8; color: #fff; }
+    .btn-outline:hover { background: rgba(255,255,255,0.1); }
+
+    .container { max-width: 1000px; margin: 2.5rem auto; padding: 0 1.5rem; }
+
+    section {
+      background: var(--card);
+      padding: 2.2rem;
+      border-radius: 12px;
+      margin-bottom: 1.8rem;
+      box-shadow: 0 4px 15px rgba(15, 23, 42, 0.05);
+    }
+    h2 {
+      color: var(--primary);
+      font-size: 1.45rem;
+      margin-bottom: 1.2rem;
+      padding-right: 0.85rem;
+      border-right: 4px solid var(--accent);
+    }
+
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.2rem; }
+    .card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-top: 3px solid var(--secondary);
+      border-radius: 8px;
+      padding: 1.4rem;
+    }
+    .card h3 { color: var(--primary); font-size: 1.12rem; margin-bottom: 0.7rem; }
+    .card ul { padding-right: 1.2rem; color: var(--text); font-size: 0.95rem; }
+    .card li { margin-bottom: 0.45rem; }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.8rem; }
+    .tag {
+      background: #e0f2fe;
+      color: #0369a1;
+      padding: 0.35rem 0.85rem;
+      border-radius: 6px;
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+
+    .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+    .contact-item {
+      background: #f8fafc;
+      padding: 1rem 1.2rem;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+    }
+    .contact-item span { display: block; font-size: 0.85rem; color: var(--muted); }
+    .contact-item strong { color: var(--primary); font-size: 1rem; }
+
+    footer { text-align: center; padding: 2rem 1rem; color: var(--muted); font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="badge">Electrical Design • MEP Engineering • Project Management</div>
+    <h1>م. محمد الفاخري</h1>
+    <p>مهندس تصميم أنظمة كهربائية، قيادة ومراجعة مشاريع الكهروميكانيك (MEP)، وإدارة المشاريع وضبط الجودة (PMO / QA-QC)</p>
+    <div class="actions">
+      <a href="#services" class="btn btn-primary">مجالات العمل</a>
+      <a href="#contact" class="btn btn-outline">تواصل معي</a>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <section>
+      <h2>نبذة مهنية</h2>
+      <p>
+        مهندس متخصص في تصميم ومراجعة الأنظمة الكهربائية والكهروميكانيكية (MEP) وإدارة المشاريع الهندسية الكبرى، مع خبرة عملية في تمثيل المالك (Owner's Representative)، تدقيق المخططات التصميمية والتنفيذية، إدارة الوثائق الفنية (Document Control)، وضبط الجودة وتطبيق المعايير التعاقدية في المنشآت الحيوية والصحية.
+      </p>
+    </section>
+
+    <section id="services">
+      <h2>المحاور التخصصية</h2>
+      <div class="grid-3">
+
+        <div class="card">
+          <h3>⚡ تصميم الأنظمة الكهربائية</h3>
+          <ul>
+            <li>تصميم شبكات الجهد المتوسط والمنخفض (MV/LV) وتقدير الأحمال الكهربائية.</li>
+            <li>حسابات هبوط الجهد، تيارات القصر، وانتقائية القواطع (Discrimination).</li>
+            <li>أنظمة الطاقة الاحتياطية (Generators & UPS) وأنظمة العزل الطبي (Medical IT/IPS).</li>
+            <li>تصميم أنظمة الإنارة، التأريض، الحماية من الصواعق، والتيار الخفيف (ELV/ICT).</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>⚙️ هندسة الكهروميكانيك (MEP)</h3>
+          <ul>
+            <li>التنسيق المتكامل بين الأنظمة الكهربائية والميكانيكية والصحية ومنع التعارضات.</li>
+            <li>مراجعة تصاميم التكييف وتدرج الضغوط الهوائية في المنشآت الحرجة والمستشفيات.</li>
+            <li>تكامل أنظمة إنذار وإطفاء الحريق (Fire Alarm Interlocks) مع أنظمة المبنى.</li>
+            <li>تدقيق الاعتمادات الفنية للمواد (Material Submittals) والمخططات التنفيذية (Shop Drawings).</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>📋 إدارة المشاريع و PMO</h3>
+          <ul>
+            <li>تمثيل المالك والإشراف الفني على المقاولين والاستشاريين وفق معايير FIDIC.</li>
+            <li>ضبط الجودة (QA/QC)، إصدار ومتابعة تقارير عدم المطابقة (NCR) وخطط التصحيح.</li>
+            <li>إدارة الوثائق الهندسية، الاستفسارات الفنية (RFIs)، ومحاضر الفحص والاستلام (T&C).</li>
+            <li>متابعة الجداول الزمنية، تقييم المخاطر الفنية، وإعداد التقارير التنفيذية للإدارة العليا.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <h2>المعايير والأدوات المعتمدة</h2>
+      <div class="tags">
+        <span class="tag">IEC 60364</span>
+        <span class="tag">NFPA 70 / 72 / 99</span>
+        <span class="tag">FIDIC Contracts</span>
+        <span class="tag">ASHRAE Standards</span>
+        <span class="tag">AutoCAD</span>
+        <span class="tag">QA/QC & NCR Management</span>
+        <span class="tag">MEP Design Audit</span>
+        <span class="tag">PMO & Document Control</span>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>معلومات التواصل</h2>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <span>البريد الإلكتروني</span>
+          <strong>your.email@example.com</strong>
+        </div>
+        <div class="contact-item">
+          <span>الموقع</span>
+          <strong>بنغازي، ليبيا</strong>
+        </div>
+        <div class="contact-item">
+          <span>GitHub</span>
+          <strong>github.com/karrarmep-cloud</strong>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    © 2026 Eng. Mohammed karrar — Electrical Design, MEP & Project Management
+  </footer>
+
+</body>
+</html>
